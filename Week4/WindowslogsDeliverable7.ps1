@@ -1,0 +1,1 @@
+﻿Get-ChildItem -Path C:\xampp\apache\logs\*.log | Select-String -Pattern "error"

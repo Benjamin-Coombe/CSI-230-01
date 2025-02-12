@@ -1,0 +1,1 @@
+﻿Get-Content C:\xampp\apache\log\access.log | Select-String '200 ' -NotMatch
