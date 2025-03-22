@@ -1,13 +1,14 @@
-﻿# Dot source the script to import the function
-. "C:\Users\champuser\CSI-230-01\Week4\WindowslogsDeliverablefunction.ps1"
+<#
+# Script that calls/runs functions from the Apache-Logs.ps1 file via dot notation
+. (Join-Path $PSScriptRoot .\'Apache-Logs.ps1')
 
-# Define the inputs
-$pageVisited = "index.html"
-$httpCode = "404"
-$webBrowser = "Chrome"
+# Runs funciton from Apache-Logs.ps1 using the specified parameters
+$Result = FilterRequestIP "index.html" "404" "Chrome"
+$Result
+#>
 
-# Call the function and store the result
-$result = Get-ApacheLogs -PageVisited $pageVisited -HttpCode $httpCode -WebBrowser $webBrowser
+# Script that calls/runs the "ApacheLogs1" function from the "Parsing_Apache_Logs.ps1" file
+. (Join-Path $PSScriptRoot .\'Parsing_Apache_Logs.ps1')
 
-# Display the result
-$result | Format-Table -AutoSize
+# Runs the called function and outputs the results
+ApacheLogs1
