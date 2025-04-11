@@ -2,7 +2,7 @@
     
     $logsNotformatted = Get-Content "C:\xampp\apache\logs\access.log"
     $stableRecords = @()
-   
+    $logPath = "C:\xampp\apache\logs\access.log"
     $logEntries = Get-Content -Path $logPath
 
     # Loop through each log entry
